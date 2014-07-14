@@ -54,19 +54,19 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             BlobProperties properties = new BlobProperties();
             properties.ETag = HttpResponseParsers.GetETag(response);
 
-#if WINDOWS_PHONE 
+#if WINDOWS_PHONE
             properties.LastModified = HttpResponseParsers.GetLastModified(response);
             properties.ContentLanguage = response.Headers[Constants.HeaderConstants.ContentLanguageHeader];
 #else
             properties.LastModified = response.LastModified.ToUniversalTime();
-            properties.ContentLanguage = response.Headers[HttpResponseHeader.ContentLanguage];
+            properties.ContentLanguage = response.Headers[Microsoft.WindowsAzure.Storage.Shared.Protocol.HttpResponseHeader.ContentLanguage];
 #endif
 
             properties.ContentDisposition = response.Headers[Constants.HeaderConstants.ContentDispositionResponseHeader];
-            properties.ContentEncoding = response.Headers[HttpResponseHeader.ContentEncoding];
-            properties.ContentMD5 = response.Headers[HttpResponseHeader.ContentMd5];
-            properties.ContentType = response.Headers[HttpResponseHeader.ContentType];
-            properties.CacheControl = response.Headers[HttpResponseHeader.CacheControl];
+            properties.ContentEncoding = response.Headers[Microsoft.WindowsAzure.Storage.Shared.Protocol.HttpResponseHeader.ContentEncoding];
+            properties.ContentMD5 = response.Headers[Microsoft.WindowsAzure.Storage.Shared.Protocol.HttpResponseHeader.ContentMd5];
+            properties.ContentType = response.Headers[Microsoft.WindowsAzure.Storage.Shared.Protocol.HttpResponseHeader.ContentType];
+            properties.CacheControl = response.Headers[Microsoft.WindowsAzure.Storage.Shared.Protocol.HttpResponseHeader.CacheControl];
 
             // Get blob type
             string blobType = response.Headers[Constants.HeaderConstants.BlobType];
@@ -81,7 +81,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             properties.LeaseDuration = GetLeaseDuration(response);
 
             // Get the content length. Prioritize range and x-ms over content length for the special cases.
-            string rangeHeader = response.Headers[HttpResponseHeader.ContentRange];
+            string rangeHeader = response.Headers[Microsoft.WindowsAzure.Storage.Shared.Protocol.HttpResponseHeader.ContentRange];
             string contentLengthHeader = response.Headers[Constants.HeaderConstants.ContentLengthHeader];
             string blobContentLengthHeader = response.Headers[Constants.HeaderConstants.BlobContentLengthHeader];
             if (!string.IsNullOrEmpty(rangeHeader))

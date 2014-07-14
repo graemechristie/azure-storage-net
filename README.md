@@ -1,9 +1,12 @@
 # Microsoft Azure Storage SDK for .NET (4.0.0)
 
-The Microsoft Azure Storage SDK for .NET allows you to build Azure applications 
+**Note: This repository has been forked from [The Official Azure Storage Repository](https://github.com/graemechristie/azure-storage-net) and modified to build Xamarin IOS and Android versions of the library. This is currently a work in progress and should be used at your own risk. This work is in no way officially supported by Microsoft or anyone else. Additionally, Table Storage is currently unlikely to work with Xamarin.iOS as some of the code utilising relection has not been (and may not ever be) refactored.**
+
+
+The Microsoft Azure Storage SDK for .NET allows you to build Azure applications
 that take advantage of scalable cloud computing resources.
 
-This repository contains the open source subset of the .NET SDK. For documentation of the 
+This repository contains the open source subset of the .NET SDK. For documentation of the
 complete Azure SDK, please see the [Microsoft Azure .NET Developer Center](http://azure.microsoft.com/en-us/develop/net/).
 
 ## Features
@@ -20,19 +23,19 @@ complete Azure SDK, please see the [Microsoft Azure .NET Developer Center](http:
     - Create/Delete Queues
     - Insert/Peek Queue Messages
     - Advanced Queue Operations
-	
+
 ## Getting started
 
 The complete Microsoft Azure SDK can be downloaded from the [Microsoft Azure Downloads Page](http://azure.microsoft.com/en-us/downloads/?sdk=net) and ships with support for building deployment packages, integrating with tooling, rich command line tooling, and more.
 
-For the best development experience, developers should use the official Microsoft NuGet packages for libraries. NuGet packages are regularly updated with new functionality and hotfixes. 
+For the best development experience, developers should use the official Microsoft NuGet packages for libraries. NuGet packages are regularly updated with new functionality and hotfixes.
 
 ## Target Frameworks
 
 - .NET Framework 4.0: As of October 2012, Storage Client Libraries for .NET supports primarily the desktop .NET Framework 4 release and above.
 - Windows 8 and 8.1 for Windows Store app development: Storage Client Libraries are available for Windows Store applications.
 - Windows Phone 8 for Windows Phone app development: Storage Client Libraries are available for Windows Phone applications.
- 
+
 ## Requirements
 
 - Microsoft Azure Subscription: To call Microsoft Azure services, you need to first [create an account](https://account.windowsazure.com/Home/Index). Sign up for a free trial or use your MSDN subscriber benefits.
@@ -41,7 +44,7 @@ For the best development experience, developers should use the official Microsof
 
 ## Download & Install
 
-The Storage Client Library ships with the Microsoft Azure SDK for .NET and also on NuGet. You'll find the latest version and hotfixes on NuGet via the `WindowsAzure.Storage` package. 
+The Storage Client Library ships with the Microsoft Azure SDK for .NET and also on NuGet. You'll find the latest version and hotfixes on NuGet via the `WindowsAzure.Storage` package.
 
 This version of the Storage Client Library ships with the new storage version 2014-02-14. This storage version provides a preview of the Microsoft Azure File Service. For more details,
 please see the [Introducing Microsoft Azure File Service blog on MSDN] (http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/11/introducing-microsoft-azure-file-service.aspx).
@@ -119,7 +122,7 @@ using Microsoft.WindowsAzure.Storage.Table;
 ```
 
 To perform an operation on any Microsoft Azure resource you will first instantiate
-a *client* which allows performing actions on it. The resource is known as an 
+a *client* which allows performing actions on it. The resource is known as an
 *entity*. To do so for Table you also have to authenticate your request:
 
 ```csharp
@@ -144,7 +147,7 @@ We gladly accept community contributions.
 
 - Issues: Please report bugs using the Issues section of GitHub
 - Forums: Interact with the development teams on StackOverflow or the Microsoft Azure Forums
-- Source Code Contributions: Please follow the [contribution guidelines for Microsoft Azure open source](http://azure.github.io/guidelines.html) that details information on onboarding as a contributor 
+- Source Code Contributions: Please follow the [contribution guidelines for Microsoft Azure open source](http://azure.github.io/guidelines.html) that details information on onboarding as a contributor
 
 For general suggestions about Microsoft Azure please use our [UserVoice forum](http://feedback.azure.com/forums/34192--general-feedback).
 

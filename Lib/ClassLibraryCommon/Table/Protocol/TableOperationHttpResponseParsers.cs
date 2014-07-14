@@ -347,7 +347,7 @@ namespace Microsoft.WindowsAzure.Storage.Table.Protocol
             // Read this value now and not later so that the cache is either used or not used for the entire query response parsing.
             bool disablePropertyResolverCache = false;
 
-#if !WINDOWS_PHONE
+#if !WINDOWS_PHONE && !__IOS__
             if (TableEntity.DisablePropertyResolverCache)
             {
                 disablePropertyResolverCache = TableEntity.DisablePropertyResolverCache;

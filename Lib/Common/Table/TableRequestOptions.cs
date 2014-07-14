@@ -98,7 +98,7 @@ namespace Microsoft.WindowsAzure.Storage.Table
             this.ApplyToStorageCommandCommon(cmd);
         }
 
-#if WINDOWS_DESKTOP && !WINDOWS_PHONE
+#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
         [Obsolete("Support for accessing Windows Azure Tables via WCF Data Services is now obsolete. It's recommended that you use the Microsoft.WindowsAzure.Storage.Table namespace for working with tables.")]
         internal void ApplyToStorageCommand<T, INTERMEDIATE_TYPE>(TableCommand<T, INTERMEDIATE_TYPE> cmd)
         {

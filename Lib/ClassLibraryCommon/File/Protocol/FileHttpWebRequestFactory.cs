@@ -45,7 +45,7 @@ namespace Microsoft.WindowsAzure.Storage.File.Protocol
         {
             CommonUtility.AssertNotNull("properties", properties);
             
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, null /* builder */, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, null /* builder */, useVersionHeader, operationContext);
 
             if (properties.CacheControl != null)
             {
@@ -205,7 +205,7 @@ namespace Microsoft.WindowsAzure.Storage.File.Protocol
             UriQueryBuilder builder = new UriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "rangelist");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
             AddRange(request, offset, count);
             request.ApplyAccessCondition(accessCondition);
             return request;
@@ -228,7 +228,7 @@ namespace Microsoft.WindowsAzure.Storage.File.Protocol
             UriQueryBuilder builder = new UriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "properties");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
 
             if (properties != null)
             {
@@ -259,7 +259,7 @@ namespace Microsoft.WindowsAzure.Storage.File.Protocol
             UriQueryBuilder builder = new UriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "properties");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
 
             request.Headers.Add(Constants.HeaderConstants.FileContentLengthHeader, newFileSize.ToString(NumberFormatInfo.InvariantInfo));
 
@@ -278,7 +278,7 @@ namespace Microsoft.WindowsAzure.Storage.File.Protocol
         /// <returns>A web request for performing the operation.</returns>
         public static HttpWebRequest Get(Uri uri, int? timeout, AccessCondition accessCondition, bool useVersionHeader, OperationContext operationContext)
         {
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Get, uri, timeout, null /* builder */, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Get, uri, timeout, null /* builder */, useVersionHeader, operationContext);
             request.ApplyAccessCondition(accessCondition);
             return request;
         }
@@ -353,7 +353,7 @@ namespace Microsoft.WindowsAzure.Storage.File.Protocol
             UriQueryBuilder builder = new UriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "range");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
 
             request.AddOptionalHeader(Constants.HeaderConstants.RangeHeader, fileRange.ToString());
             request.Headers.Add(Constants.HeaderConstants.FileRangeWrite, fileRangeWrite.ToString());

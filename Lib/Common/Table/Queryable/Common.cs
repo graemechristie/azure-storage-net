@@ -26,7 +26,9 @@ namespace Microsoft.WindowsAzure.Storage.Table.Queryable
         private static readonly Type[] UnsupportedTypes = new Type[]
         {
 #if !ASTORIA_LIGHT
+#if !__IOS__
                 typeof(System.Dynamic.IDynamicMetaObjectProvider),
+#endif
                 typeof(System.Tuple<>),
                 typeof(System.Tuple<,>),
                 typeof(System.Tuple<,,>),

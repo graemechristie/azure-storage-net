@@ -97,10 +97,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\ClassLibraryCommon\*.cs" />
-	<Compile Include="..\ClassLibraryCommon\Analytics\*.cs">
+    <Compile Include="..\ClassLibraryCommon\Analytics\*.cs">
       <Link>Analytics\Analytics</Link>
     </Compile>
-	<Compile Include="..\ClassLibraryCommon\Blob\*.cs">
+    <Compile Include="..\ClassLibraryCommon\Blob\*.cs">
       <Link>Blob\Blob</Link>
     </Compile>
     <Compile Include="..\ClassLibraryCommon\Core\*.cs">
@@ -140,7 +140,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Lib\WindowsDesktop\Microsoft.WindowsAzure.Storage.csproj">
       <Project>{c6787633-b26a-4913-a762-4c0ffceb6fe3}</Project>
-      <Name>Microsoft.WindowsAzure.Storage %28Lib\WindowsDesktop\Microsoft.WindowsAzure.Storage%29</Name>
+      <Name>Microsoft.WindowsAzure.Storage</Name>
     </ProjectReference>
     <ProjectReference Include="..\FaultInjection\HttpMangler\HttpMangler.csproj">
       <Project>{ca607e8f-2906-4065-a1a9-4a3733f0cc31}</Project>

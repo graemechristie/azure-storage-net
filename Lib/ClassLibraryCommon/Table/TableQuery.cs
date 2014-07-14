@@ -335,6 +335,10 @@ namespace Microsoft.WindowsAzure.Storage.Table
 
         internal ExecutionInfo Bind()
         {
+//TODO: This need fixin on IOS
+#if __IOS__
+    throw new NotImplementedException();
+#else
             ExecutionInfo retVal = new ExecutionInfo();
 
             // IQueryable impl
@@ -404,6 +408,7 @@ namespace Microsoft.WindowsAzure.Storage.Table
             retVal.RequestOptions = TableRequestOptions.ApplyDefaults(retVal.RequestOptions, this.queryProvider.Table.ServiceClient);
             retVal.OperationContext = retVal.OperationContext ?? new OperationContext();
             return retVal;
+#endif
         }
 
         internal class ExecutionInfo

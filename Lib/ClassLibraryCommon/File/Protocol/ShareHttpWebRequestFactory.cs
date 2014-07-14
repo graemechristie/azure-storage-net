@@ -170,7 +170,7 @@ namespace Microsoft.WindowsAzure.Storage.File.Protocol
                 builder.Add("include", "metadata");
             }
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
             return request;
         }
 

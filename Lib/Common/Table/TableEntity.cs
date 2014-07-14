@@ -46,7 +46,7 @@ namespace Microsoft.WindowsAzure.Storage.Table
     [SuppressMessage("StyleCop.CSharp.SpacingRules", "SA1001:CommasMustBeSpacedCorrectly", Justification = "Reviewed.")]
     public class TableEntity : ITableEntity 
     {
-#if WINDOWS_DESKTOP && !WINDOWS_PHONE
+#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
         static TableEntity()
         {
             DisableCompiledSerializers = false;
@@ -104,7 +104,7 @@ namespace Microsoft.WindowsAzure.Storage.Table
         /// <param name="operationContext">An <see cref="OperationContext"/> object that represents the context for the current operation.</param>
         public virtual void ReadEntity(IDictionary<string, EntityProperty> properties, OperationContext operationContext)
         {
-#if WINDOWS_DESKTOP && !WINDOWS_PHONE
+#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
             if (!TableEntity.DisableCompiledSerializers)
             {
                 if (this.CompiledRead == null)
@@ -129,7 +129,7 @@ namespace Microsoft.WindowsAzure.Storage.Table
         {
             CommonUtility.AssertNotNull("entity", entity);
 
-#if WINDOWS_DESKTOP && !WINDOWS_PHONE
+#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
             if (!TableEntity.DisableCompiledSerializers)
             {
                 ReadAction compiledReadAction = compiledReadCache.GetOrAdd(entity.GetType(), TableEntity.CompileReadAction);
@@ -260,7 +260,7 @@ namespace Microsoft.WindowsAzure.Storage.Table
         /// <returns>An <see cref="IDictionary{TKey,TValue}"/> object that maps string property names to <see cref="EntityProperty"/> typed values created by serializing this table entity instance.</returns>
         public virtual IDictionary<string, EntityProperty> WriteEntity(OperationContext operationContext)
         {
-#if WINDOWS_DESKTOP && !WINDOWS_PHONE
+#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
             if (!TableEntity.DisableCompiledSerializers)
             {
                 if (this.CompiledWrite == null)
@@ -284,7 +284,7 @@ namespace Microsoft.WindowsAzure.Storage.Table
         {
             CommonUtility.AssertNotNull("entity", entity);
 
-#if WINDOWS_DESKTOP && !WINDOWS_PHONE
+#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
             if (!TableEntity.DisableCompiledSerializers)
             {
                 WriteFunc compiledWriteAction = compiledWriteCache.GetOrAdd(entity.GetType(), TableEntity.CompileWriteFunc);
@@ -377,7 +377,7 @@ namespace Microsoft.WindowsAzure.Storage.Table
 
         #region CompiledSerialization Logic
 
-#if WINDOWS_DESKTOP && !WINDOWS_PHONE
+#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
         private static void ReadNoOpAction(object obj, OperationContext ctx, IDictionary<string, EntityProperty> dict)
         {
             // no op

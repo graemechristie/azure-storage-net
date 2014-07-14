@@ -27,11 +27,10 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
     using System.IO;
 
 #if WINDOWS_RT
-    internal
+    internal static partial class BlobHttpResponseParsers
 #else
-    public
-#endif
-        static partial class BlobHttpResponseParsers
+    public static partial class BlobHttpResponseParsers
+#endif       
     {
         /// <summary>
         /// Reads service properties from a stream.

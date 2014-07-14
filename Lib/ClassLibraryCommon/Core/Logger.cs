@@ -23,12 +23,12 @@ namespace Microsoft.WindowsAzure.Storage.Core
 
     internal static partial class Logger
     {
-#if !WINDOWS_PHONE
+#if !WINDOWS_PHONE && !__IOS__
         private static TraceSource traceSource = new TraceSource(Constants.LogSourceName);
         private static volatile bool isClosed = false;
 #endif
 
-#if !WINDOWS_PHONE
+#if !WINDOWS_PHONE && !__IOS__
         static Logger()
         {
             AppDomain.CurrentDomain.DomainUnload += new EventHandler(Logger.AppDomainUnloadEvent);
@@ -36,7 +36,7 @@ namespace Microsoft.WindowsAzure.Storage.Core
         }
 #endif
 
-#if !WINDOWS_PHONE
+#if !WINDOWS_PHONE && !__IOS__
         private static void Close()
         {
             Logger.isClosed = true;
@@ -62,7 +62,7 @@ namespace Microsoft.WindowsAzure.Storage.Core
 
         internal static void LogError(OperationContext operationContext, string format, params object[] args)
         {
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || __IOS__
             if (Logger.ShouldLog(LogLevel.Error, operationContext))
             {
                 Debug.WriteLine(Logger.FormatLine(operationContext, format, args));
@@ -79,7 +79,7 @@ namespace Microsoft.WindowsAzure.Storage.Core
 
         internal static void LogWarning(OperationContext operationContext, string format, params object[] args)
         {
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || __IOS__
             if (Logger.ShouldLog(LogLevel.Warning, operationContext))
             {
                 Debug.WriteLine(Logger.FormatLine(operationContext, format, args));
@@ -96,7 +96,7 @@ namespace Microsoft.WindowsAzure.Storage.Core
 
         internal static void LogInformational(OperationContext operationContext, string format, params object[] args)
         {
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || __IOS__
             if (Logger.ShouldLog(LogLevel.Informational, operationContext))
             {
                 Debug.WriteLine(Logger.FormatLine(operationContext, format, args));
@@ -113,7 +113,7 @@ namespace Microsoft.WindowsAzure.Storage.Core
 
         internal static void LogVerbose(OperationContext operationContext, string format, params object[] args)
         {
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE || __IOS__
             if (Logger.ShouldLog(LogLevel.Verbose, operationContext))
             {
                 Debug.WriteLine(Logger.FormatLine(operationContext, format, args));
