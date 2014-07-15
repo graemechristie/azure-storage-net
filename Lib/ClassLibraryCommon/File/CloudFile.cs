@@ -3631,7 +3631,7 @@ namespace Microsoft.WindowsAzure.Storage.File
                 if (!arePropertiesPopulated)
                 {
                     this.UpdateAfterFetchAttributes(resp, isRangeGet);
-                    storedMD5 = resp.Headers[Microsoft.WindowsAzure.Storage.Shared.Protocol.HttpResponseHeader.ContentMd5];
+                    storedMD5 = resp.Headers[HttpResponseHeader.ContentMd5];
 
                     if (!options.DisableContentMD5Validation.Value &&
                         options.UseTransactionalMD5.Value &&

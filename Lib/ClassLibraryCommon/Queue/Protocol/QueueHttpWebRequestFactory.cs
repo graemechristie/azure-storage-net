@@ -326,7 +326,7 @@ namespace Microsoft.WindowsAzure.Storage.Queue.Protocol
                 builder.Add("include", "metadata");
             }
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
             return request;
         }
 
@@ -420,7 +420,7 @@ namespace Microsoft.WindowsAzure.Storage.Queue.Protocol
                 builder.Add(Constants.QueryConstants.VisibilityTimeout, visibilityTimeoutInSeconds.ToString());
             }
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Post, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Post, uri, timeout, builder, useVersionHeader, operationContext);
             return request;
         }
 
@@ -455,7 +455,7 @@ namespace Microsoft.WindowsAzure.Storage.Queue.Protocol
             builder.Add(Constants.QueryConstants.PopReceipt, popReceipt);
             builder.Add(Constants.QueryConstants.VisibilityTimeout, visibilityTimeoutInSeconds.ToString(CultureInfo.InvariantCulture));
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
             return request;
         }
 
@@ -525,7 +525,7 @@ namespace Microsoft.WindowsAzure.Storage.Queue.Protocol
                 builder.Add(Constants.QueryConstants.VisibilityTimeout, visibilityTimeout.Value.RoundUpToSeconds().ToString(CultureInfo.InvariantCulture));
             }
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
             return request;
         }
 
@@ -558,7 +558,7 @@ namespace Microsoft.WindowsAzure.Storage.Queue.Protocol
 
             builder.Add(Constants.QueryConstants.NumOfMessages, numberOfMessages.ToString(CultureInfo.InvariantCulture));
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
             return request;
         }
     }

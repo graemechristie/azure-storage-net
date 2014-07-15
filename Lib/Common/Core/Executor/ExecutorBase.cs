@@ -208,7 +208,7 @@ namespace Microsoft.WindowsAzure.Storage.Core.Executor
             }
         }
 
-#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
+#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__ && !__ANDROID__
         internal static StorageException TranslateDataServiceExceptionBasedOnParseError(Exception ex, RequestResult currentResult, Func<Stream, IDictionary<string, string>, string, StorageExtendedErrorInformation> parseDataServiceError)
         {
             if (parseDataServiceError != null)

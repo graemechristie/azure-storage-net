@@ -252,7 +252,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             UriQueryBuilder builder = GetContainerUriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "lease");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
 
             // Add Headers
             BlobHttpWebRequestFactory.AddLeaseAction(request, action);
@@ -337,7 +337,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
                 builder.Add("include", "metadata");
             }
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
             return request;
         }
 
@@ -522,7 +522,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
                 }
             }
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
             return request;
         }
 

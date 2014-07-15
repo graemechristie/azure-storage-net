@@ -271,7 +271,7 @@ namespace Microsoft.WindowsAzure.Storage
                 reqResult.ExtendedErrorInformation = null;
                 return new StorageException(reqResult, ex.Message, ex);
             }
-#elif WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
+#elif WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__ && !__ANDROID__
             else
             {
                 // Should never get to this one since we will call TranslateDataServiceException for DataService operations.
@@ -287,7 +287,7 @@ namespace Microsoft.WindowsAzure.Storage
             return null;
         }
 
-#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
+#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__ && !__ANDROID__
         /// <summary>
         /// Translates the specified exception into a storage exception.
         /// </summary>
@@ -350,7 +350,7 @@ namespace Microsoft.WindowsAzure.Storage
                 reqResult.ContentMd5 = HttpWebUtility.TryGetHeader(response, "Content-MD5", null);
                 string tempDate = HttpWebUtility.TryGetHeader(response, "Date", null);
                 reqResult.RequestDate = string.IsNullOrEmpty(tempDate) ? DateTime.Now.ToString("R", CultureInfo.InvariantCulture) : tempDate;
-                reqResult.Etag = response.Headers[Microsoft.WindowsAzure.Storage.Shared.Protocol.HttpResponseHeader.ETag];
+                reqResult.Etag = response.Headers[HttpResponseHeader.ETag];
 #endif
             }
         }

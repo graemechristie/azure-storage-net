@@ -17,7 +17,7 @@
 
 namespace Microsoft.WindowsAzure.Storage.Table.Protocol
 {
-#if WINDOWS_DESKTOP && ! WINDOWS_PHONE && ! __IOS__
+#if WINDOWS_DESKTOP && ! WINDOWS_PHONE && ! __IOS__ && !__ANDROID__
     using System;
     using System.Collections.Generic;
     using System.Data.Services.Client;

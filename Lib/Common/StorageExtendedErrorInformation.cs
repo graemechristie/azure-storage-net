@@ -27,7 +27,7 @@ namespace Microsoft.WindowsAzure.Storage
     using System.Net;
     using System.Xml;
 
-#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
+#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__ && !__ANDROID__
     using Microsoft.WindowsAzure.Storage.Table.DataServices;
 #elif WINDOWS_RT
     using Windows.Storage.Streams;
@@ -140,7 +140,7 @@ namespace Microsoft.WindowsAzure.Storage
         /// <param name="responseHeaders">The web response headers.</param>
         /// <param name="contentType">The response Content-Type.</param>
         /// <returns>The error details.</returns>
-#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__
+#if WINDOWS_DESKTOP && !WINDOWS_PHONE && !__IOS__ && !__ANDROID__
         public static StorageExtendedErrorInformation ReadDataServiceResponseFromStream(Stream inputStream, IDictionary<string, string> responseHeaders, string contentType)
         {
             CommonUtility.AssertNotNull("inputStream", inputStream);

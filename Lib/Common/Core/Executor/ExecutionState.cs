@@ -291,7 +291,7 @@ namespace Microsoft.WindowsAzure.Storage.Core.Executor
                         this.Cmd.CurrentResult.ContentMd5 = HttpWebUtility.TryGetHeader(this.resp, "Content-MD5", null);
                         string tempDate = HttpWebUtility.TryGetHeader(this.resp, "Date", null);
                         this.Cmd.CurrentResult.RequestDate = string.IsNullOrEmpty(tempDate) ? DateTime.Now.ToString("R", CultureInfo.InvariantCulture) : tempDate;
-                        this.Cmd.CurrentResult.Etag = this.resp.Headers[Microsoft.WindowsAzure.Storage.Shared.Protocol.HttpResponseHeader.ETag];
+                        this.Cmd.CurrentResult.Etag = this.resp.Headers[HttpResponseHeader.ETag];
 #endif
                     }
 

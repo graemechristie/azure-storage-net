@@ -17,7 +17,7 @@
 
 namespace Microsoft.WindowsAzure.Storage.Core.Executor
 {
-#if WINDOWS_DESKTOP && ! WINDOWS_PHONE && ! __IOS__
+#if WINDOWS_DESKTOP && ! WINDOWS_PHONE && ! __IOS__ && !__ANDROID__
     using Microsoft.WindowsAzure.Storage.Core.Util;
     using Microsoft.WindowsAzure.Storage.RetryPolicies;
     using Microsoft.WindowsAzure.Storage.Shared.Protocol;
@@ -33,9 +33,9 @@ namespace Microsoft.WindowsAzure.Storage.Core.Executor
     [Obsolete("Support for accessing Windows Azure Tables via WCF Data Services is now obsolete. It's recommended that you use the Microsoft.WindowsAzure.Storage.Table namespace for working with tables.")]
     internal class TableExecutor : ExecutorBase
     {
-        #region Async
+    #region Async
 
-        #region Begin / End
+    #region Begin / End
         // Cancellation is handeld by TableServiceContext
         public static ICancellableAsyncResult BeginExecuteAsync<T, INTERMEDIATE_TYPE>(TableCommand<T, INTERMEDIATE_TYPE> cmd, IRetryPolicy policy, OperationContext operationContext, AsyncCallback callback, object asyncState)
         {
@@ -67,7 +67,7 @@ namespace Microsoft.WindowsAzure.Storage.Core.Executor
 
         #endregion
 
-        #region Setup Request
+    #region Setup Request
         [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Reviewed.")]
         public static void InitRequest<T, INTERMEDIATE_TYPE>(ExecutionState<T> executionState)
         {
@@ -210,7 +210,7 @@ namespace Microsoft.WindowsAzure.Storage.Core.Executor
         }
         #endregion
 
-        #region Parse Response
+    #region Parse Response
         [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Reviewed.")]
         private static void EndOperation<T, INTERMEDIATE_TYPE>(ExecutionState<T> executionState)
         {
@@ -334,7 +334,7 @@ namespace Microsoft.WindowsAzure.Storage.Core.Executor
 
         #endregion
 
-        #region Sync
+    #region Sync
         [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Reviewed.")]
         public static T ExecuteSync<T, INTERMEDIATE_TYPE>(TableCommand<T, INTERMEDIATE_TYPE> cmd, IRetryPolicy policy, OperationContext operationContext)
         {
@@ -487,7 +487,7 @@ namespace Microsoft.WindowsAzure.Storage.Core.Executor
 
         #endregion
 
-        #region TableServiceContext Interop
+    #region TableServiceContext Interop
 
         private static void Context_SendingSignedRequest<T>(ExecutionState<T> executionState, HttpWebRequest req)
         {

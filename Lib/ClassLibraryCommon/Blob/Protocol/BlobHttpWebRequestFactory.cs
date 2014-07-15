@@ -165,7 +165,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
                 throw new InvalidOperationException(SR.UndefinedBlobType);
             }
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, null /* builder */, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, null /* builder */, useVersionHeader, operationContext);
 
             if (properties.CacheControl != null)
             {
@@ -266,7 +266,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             builder.Add(Constants.QueryConstants.Component, "pagelist");
             BlobHttpWebRequestFactory.AddSnapshot(builder, snapshot);
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
             AddRange(request, offset, count);
             request.ApplyAccessCondition(accessCondition);
             return request;
@@ -365,7 +365,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             UriQueryBuilder builder = new UriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "properties");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
 
             if (properties != null)
             {
@@ -410,7 +410,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             UriQueryBuilder builder = new UriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "properties");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
 
             request.Headers.Add(Constants.HeaderConstants.BlobContentLengthHeader, newBlobSize.ToString(NumberFormatInfo.InvariantInfo));
 
@@ -463,7 +463,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             UriQueryBuilder builder = new UriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "properties");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
             request.ContentLength = 0;
 
             request.Headers.Add(Constants.HeaderConstants.SequenceNumberAction, sequenceNumberAction.ToString());
@@ -647,7 +647,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             UriQueryBuilder builder = new UriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "snapshot");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
             request.ApplyAccessCondition(accessCondition);
             return request;
         }
@@ -693,7 +693,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             UriQueryBuilder builder = new UriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "lease");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
             request.ApplyAccessCondition(accessCondition);
 
             // Add lease headers
@@ -775,7 +775,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             builder.Add(Constants.QueryConstants.Component, "block");
             builder.Add("blockid", blockId);
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
             request.ApplyLeaseId(accessCondition);
             return request;
         }
@@ -811,7 +811,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             UriQueryBuilder builder = new UriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "blocklist");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
 
             if (properties != null)
             {
@@ -860,7 +860,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             builder.Add("blocklisttype", typesOfBlocks.ToString());
             BlobHttpWebRequestFactory.AddSnapshot(builder, snapshot);
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
             request.ApplyAccessCondition(accessCondition);
             return request;
         }
@@ -902,7 +902,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             UriQueryBuilder builder = new UriQueryBuilder();
             builder.Add(Constants.QueryConstants.Component, "page");
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
 
             request.Headers.Add(Constants.HeaderConstants.RangeHeader, pageRange.ToString());
             request.Headers.Add(Constants.HeaderConstants.PageWrite, pageWrite.ToString());
@@ -942,7 +942,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
         {
             CommonUtility.AssertNotNull("source", source);
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, null /* builder */, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, null /* builder */, useVersionHeader, operationContext);
 
             request.Headers.Add(Constants.HeaderConstants.CopySourceHeader, source.AbsoluteUri);
             request.ApplyAccessCondition(destAccessCondition);
@@ -981,7 +981,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
             builder.Add(Constants.QueryConstants.Component, "copy");
             builder.Add(Constants.QueryConstants.CopyId, copyId);
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Put, uri, timeout, builder, useVersionHeader, operationContext);
 
             request.Headers.Add(Constants.HeaderConstants.CopyActionHeader, Constants.HeaderConstants.CopyActionAbort);
             request.ApplyAccessCondition(accessCondition);
@@ -1021,7 +1021,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
                 builder.Add("snapshot", BlobRequest.ConvertDateTimeToSnapshotString(snapshot.Value));
             }
 
-            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(Microsoft.WindowsAzure.Storage.Shared.Protocol.WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
+            HttpWebRequest request = HttpWebRequestFactory.CreateWebRequest(WebRequestMethods.Http.Get, uri, timeout, builder, useVersionHeader, operationContext);
             request.ApplyAccessCondition(accessCondition);
             return request;
         }
