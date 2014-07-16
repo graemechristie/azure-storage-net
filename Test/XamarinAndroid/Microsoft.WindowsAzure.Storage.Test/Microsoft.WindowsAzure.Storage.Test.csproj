@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{110D2FAF-DAAB-4986-8CC1-98E8D27B10B0}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft.WindowsAzure.Storage.Test</RootNamespace>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AssemblyName>Microsoft.WindowsAzure.Storage.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__ANDROID__;TASK;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__ANDROID__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.NUnitLite" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\..\..\Lib\XamarinAndroid\bin\Debug\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Blob\CloudBlobContainerTest.cs" />
+    <Compile Include="Blob\BlobTestBase.cs" />
+    <Compile Include="TestBase.cs" />
+    <Compile Include="..\..\Common\TestBase.Common.cs">
+      <Link>TestBase.Common.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\MockBufferManager.cs">
+      <Link>MockBufferManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\TestCategoryConstants.cs">
+      <Link>TestCategoryConstants.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\TestHelper.Common.cs">
+      <Link>TestHelper.Common.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\TestConfigProcess\TenantConfiguration.cs">
+      <Link>TestConfigProcess\TenantConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\TestConfigProcess\TenantType.cs">
+      <Link>TestConfigProcess\TenantType.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\TestConfigProcess\TestConfigurations.cs">
+      <Link>TestConfigProcess\TestConfigurations.cs</Link>
+    </Compile>
+    <Compile Include="TestHelper.cs" />
+    <Compile Include="..\..\Common\Blob\BlobTestBase.Common.cs">
+      <Link>Blob\BlobTestBase.Common.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\Blob\NonSeekableMemoryStream.cs">
+      <Link>Blob\NonSeekableMemoryStream.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="..\..\Common\TestConfigurations.xml">
+      <Link>TestConfigurations.xml</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Blob\" />
+    <Folder Include="TestConfigProcess\" />
+  </ItemGroup>
+</Project>

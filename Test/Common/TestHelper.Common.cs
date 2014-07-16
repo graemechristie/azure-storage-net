@@ -25,6 +25,8 @@ using System.Threading.Tasks;
 
 #if WINDOWS_DESKTOP
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+#elif __IOS__ || __ANDROID__
+using NUnit.Framework;
 #else
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 #endif
@@ -96,7 +98,7 @@ namespace Microsoft.WindowsAzure.Storage
         internal static void AssertCancellation(OperationContext ctx)
         {
             TestHelper.AssertNAttempts(ctx, 1);
-            Assert.IsInstanceOfType(ctx.LastResult.Exception, typeof(StorageException));
+			Assert.That(ctx.LastResult.Exception, Is.InstanceOf<StorageException>());
             Assert.AreEqual("Operation was canceled by user.", ctx.LastResult.Exception.Message);
             Assert.AreEqual((int)HttpStatusCode.Unused, ((StorageException)ctx.LastResult.Exception).RequestInformation.HttpStatusCode);
             Assert.AreEqual("Unused", ((StorageException)ctx.LastResult.Exception).RequestInformation.HttpStatusMessage);

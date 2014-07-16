@@ -29,6 +29,8 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.WindowsAzure.Storage.Table.DataServices;
 using System.ServiceModel.Channels;
+#elif __IOS__ || __ANDROID__
+using NUnit.Framework;
 #else
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 #endif

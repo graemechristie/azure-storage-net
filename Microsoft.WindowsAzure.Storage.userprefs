@@ -1,0 +1,21 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.192.168.0.6:5555" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Test\XamarinAndroid\Microsoft.WindowsAzure.Storage.Test\Blob\CloudBlobContainerTest.cs">
+    <Files>
+      <File FileName="c:\dev\azure-storage-net\Test\Common\TestHelper.Common.cs" Line="1" Column="1" />
+      <File FileName="Test\XamarinAndroid\Microsoft.WindowsAzure.Storage.Test\Blob\CloudBlobContainerTest.cs" Line="14" Column="14" />
+      <File FileName="Test\XamarinAndroid\Microsoft.WindowsAzure.Storage.Test\TestBase.cs" Line="1" Column="1" />
+      <File FileName="Test\XamarinAndroid\Microsoft.WindowsAzure.Storage.Test\Assets\AboutAssets.txt" Line="1" Column="1" />
+      <File FileName="Test\XamarinAndroid\Microsoft.WindowsAzure.Storage.Test\MainActivity.cs" Line="1" Column="1" />
+      <File FileName="Test\Common\TestConfigurations.xml" Line="1" Column="1" />
+      <File FileName="Test\Common\TestBase.Common.cs" Line="1" Column="1" />
+      <File FileName="Test\Common\TestConfigProcess\TestConfigurations.cs" Line="1" Column="1" />
+      <File FileName="Test\XamarinAndroid\Microsoft.WindowsAzure.Storage.Test\Blob\BlobTestBase.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Test.XamarinAndroid.Microsoft.WindowsAzure.Storage.Test AndroidDeviceId-Debug="192.168.0.6:5555" />
+</Properties>

@@ -205,7 +205,7 @@ namespace Microsoft.WindowsAzure.Storage.Blob.Protocol
         [TestCategory(ComponentCategory.Blob)]
         [TestCategory(TestTypeCategory.UnitTest)]
         [TestCategory(SmokeTestCategory.NonSmoke)]
-        [TestCategory(TenantTypeCategory.DevStore), TestCategory(TenantTypeCategory.DevFabric), TestCategory(TenantTypeCategory.Cloud)]
+        [TestCategory(TenantTypeCategory.Cloud)]
         public void BlobProtocolGetBlobCloudAnonAsync()
         {
             cloudAnonAsync.GetBlobScenarioTest(cloudSetup.ContainerName, cloudSetup.BlobName, cloudSetup.Properties,

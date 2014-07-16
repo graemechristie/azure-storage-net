@@ -13,15 +13,15 @@
   <TenantConfiguration>
     <TenantName>ProductionTenant</TenantName>
     <TenantType>Cloud</TenantType>
-    <AccountName>[ACCOUNT NAME HERE]</AccountName>
-    <AccountKey>[ACCOUNT KEY HERE]</AccountKey>
-    <BlobServiceEndpoint>http://[ACCOUNT].blob.core.windows.net</BlobServiceEndpoint>
-    <QueueServiceEndpoint>http://[ACCOUNT].queue.core.windows.net</QueueServiceEndpoint>
-    <TableServiceEndpoint>http://[ACCOUNT].table.core.windows.net</TableServiceEndpoint>
-    <FileServiceEndpoint>http://[ACCOUNT].file.core.windows.net</FileServiceEndpoint>
-    <BlobServiceSecondaryEndpoint>http://[ACCOUNT]-secondary.blob.core.windows.net</BlobServiceSecondaryEndpoint>
-    <QueueServiceSecondaryEndpoint>http://[ACCOUNT]-secondary.queue.core.windows.net</QueueServiceSecondaryEndpoint>
-    <TableServiceSecondaryEndpoint>http://[ACCOUNT]-secondary.table.core.windows.net</TableServiceSecondaryEndpoint>
+    <AccountName>expensemonkey</AccountName>
+    <AccountKey>yhxWrqdk0XaT3Dx6LnCkQr5VAk3O5ITgXzO4F6MA8mB21NtLZVARY6q172+iBJz2RJjJMNKO24gwfxR7636i6w==</AccountKey>
+    <BlobServiceEndpoint>http://expensemonkey.blob.core.windows.net</BlobServiceEndpoint>
+    <QueueServiceEndpoint>http://expensemonkey.queue.core.windows.net</QueueServiceEndpoint>
+    <TableServiceEndpoint>http://expensemonkey.table.core.windows.net</TableServiceEndpoint>
+    <FileServiceEndpoint>http://expensemonkey.file.core.windows.net</FileServiceEndpoint>
+    <BlobServiceSecondaryEndpoint>http://expensemonkey-secondary.blob.core.windows.net</BlobServiceSecondaryEndpoint>
+    <QueueServiceSecondaryEndpoint>http://expensemonkey-secondary.queue.core.windows.net</QueueServiceSecondaryEndpoint>
+    <TableServiceSecondaryEndpoint>http://expensemonkey-secondary.table.core.windows.net</TableServiceSecondaryEndpoint>
   </TenantConfiguration>
 </TenantConfigurations>
 </TestConfigurations>

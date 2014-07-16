@@ -21,6 +21,8 @@ using System.IO;
 
 #if WINDOWS_DESKTOP
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+#elif __IOS__ || __ANDROID__
+using NUnit.Framework;
 #else
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 #endif
