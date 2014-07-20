@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhone\Debug</OutputPath>
-    <DefineConstants>DEBUG;__IOS__;__MOBILE__;__MOBILE__;WINDOWS_DESKTOP</DefineConstants>
+    <DefineConstants>DEBUG;__IOS__;__MOBILE__;WINDOWS_DESKTOP;TASK</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
